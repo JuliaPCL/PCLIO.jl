@@ -28,7 +28,7 @@ for f in [
         :loadPLYFile,
         :load,
         ]
-    ex = Expr(:macrocall, symbol("@icxx_str"),
+    ex = Expr(:macrocall, Symbol("@icxx_str"),
         "pcl::io::$f(\$(pointer(s)), *\$(cloud.handle));")
     @eval begin
         function $f{T}(s::AbstractString, cloud::PointCloud{T})
@@ -46,7 +46,7 @@ for f in [
         :saveOBJFile,
         :savePLYFile,
         ]
-    ex = Expr(:macrocall, symbol("@icxx_str"),
+    ex = Expr(:macrocall, Symbol("@icxx_str"),
         "pcl::io::$f(\$(pointer(s)), *\$(cloud.handle), \$binary_mode);")
     @eval begin
         function $f{T}(s::AbstractString, cloud::PointCloud{T};
