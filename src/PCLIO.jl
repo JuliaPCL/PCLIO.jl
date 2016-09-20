@@ -60,7 +60,7 @@ for f in [
     end
 end
 
-"""Create PointCloud instance and then load PCD data."""
+# Create PointCloud instance and then load PCD data
 function (::Type{PointCloud{T}}){T}(path::AbstractString)
     handle = @boostsharedptr "pcl::PointCloud<\$T>"
     cloud = PointCloud(handle)
