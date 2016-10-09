@@ -1,3 +1,12 @@
+"""
+PCL I/O
+
+Reading / writing pcd/obj/ply files in Julia.
+
+## Exports
+
+$(EXPORTS)
+"""
 module PCLIO
 
 export loadPCDFile, loadOBJFile, loadPLYFile, load, savePCDFile,
@@ -6,6 +15,7 @@ export loadPCDFile, loadOBJFile, loadPLYFile, load, savePCDFile,
 using LibPCL
 using PCLCommon
 using Cxx
+using DocStringExtensions
 
 libpcl_io = LibPCL.find_library_e("libpcl_io")
 try
