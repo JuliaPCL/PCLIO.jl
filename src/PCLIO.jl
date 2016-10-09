@@ -1,7 +1,7 @@
 """
-PCL I/O
-
-Reading / writing pcd/obj/ply files in Julia.
+The **pcl_io** library contains classes and functions for reading and writing
+point cloud data (PCD) files, as well as capturing point clouds from a variety
+of sensing devices
 
 ## Exports
 
@@ -12,10 +12,10 @@ module PCLIO
 export loadPCDFile, loadOBJFile, loadPLYFile, load, savePCDFile,
     saveOBJFile, savePLYFile
 
+using DocStringExtensions
 using LibPCL
 using PCLCommon
 using Cxx
-using DocStringExtensions
 
 libpcl_io = LibPCL.find_library_e("libpcl_io")
 try
